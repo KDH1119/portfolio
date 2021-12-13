@@ -102,6 +102,10 @@ p {
   padding: 16px;
 }
 
+.navbar__logo a {
+  font-size: var(--font-medium);
+}
+
 .navbar__menu {
   display: flex;
 }
@@ -139,7 +143,7 @@ p {
 }
 
 .home__title,
-.home__desccription {
+.home__description {
   color: var(--color-white);
 }
 
@@ -159,6 +163,7 @@ p {
   text-align: center;
   margin: auto;
 }
+
 .section__container {
   max-width: 1200px;
   margin: auto;
@@ -243,12 +248,12 @@ p {
   margin: 20px 0;
 }
 
-.skillset_title {
+.skillset__title {
   color: var(--color-white);
 }
 
 .skillset__left {
-  flex-basis: 60%;
+  flex-basis: 70%;
   background-color: var(--color-dark-grey);
   padding: 20px 40px;
 }
@@ -258,8 +263,8 @@ p {
 }
 
 .skill__value {
-  width: 70%;
-  height: 3px;
+  width: 100%;
+  height: 5px;
   background-color: var(--color-orange);
 }
 
@@ -270,7 +275,7 @@ p {
 
 .skill__bar {
   width: 100%;
-  height: 3px;
+  height: 5px;
   background-color: var(--color-grey);
 }
 
@@ -396,6 +401,7 @@ p {
 .testimonial {
   display: flex;
   margin: 32px 0;
+  justify-content: center;
 }
 
 .testimonial__avatar {
@@ -425,4 +431,30 @@ p {
 
 .testimonial__speech-bubble a {
   color: var(--color-pink);
+}
+
+/* Contact */
+#contact {
+  background-color: var(--color-pink);
+}
+
+.contact__title,
+.contact__email,
+.contact__rights {
+  color: var(--color-white);
+}
+
+.contact__title {
+  margin: 24px 0;
+}
+
+.contact__links {
+  font-size: var(--font-large);
+  margin: 24px 0;
+}
+
+.contact__links i:hover {
+  transform: scale(1.2);
+  color: var(--color-yellow);
+  transition: all var(--animation-duration) ease-in;
 }
