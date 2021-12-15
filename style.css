@@ -107,6 +107,7 @@ p {
 #navbar.navbar--dark {
   background-color: var(--color-dark-grey);
   transition: all var(--animation-duration) ease-in-out;
+  z-index: 1;
 }
 
 .navbar__logo a {
