@@ -46,7 +46,34 @@ document.addEventListener('scroll', () => {
     home.style.opacity = 1.2 - window.scrollY / homeHeight;
 });
 
+//
+const about = document.querySelector('#about');
+const arrow = document.querySelector('#arrow');
+const aboutHeight = about.getBoundingClientRect().height;
 
+document.addEventListener('scroll', () => {
+    if(window.scrollY > aboutHeight/2) {
+        arrow.classList.add('arrow');
+    } else {
+        arrow.classList.remove('arrow');
+    }
+});
+
+// Show "arrow up" button when scrolling down
+const arrowUp = document.querySelector('.arrow-up');
+
+document.addEventListener('scroll', ()=> {
+    if(window.scrollY > homeHeight/2){
+        arrowUp.classList.add('visible');
+    } else {
+        arrowUp.classList.remove('visible');
+    }
+});
+
+// Handle click on the "arrow up" button
+arrowUp.addEventListener('click', ()=> {
+    scrollIntoView('#home');
+});
 
 
 function scrollIntoView(selector){
