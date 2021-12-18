@@ -27,7 +27,14 @@ navbarMenu.addEventListener('click', (event) => {
     if(link == null) {
         return;
     }
+    navbarMenu.classList.remove('open');
     scrollIntoView(link);
+});
+
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', ()=>{
+    navbarMenu.classList.toggle('open');
 });
 
 
@@ -43,7 +50,7 @@ const home = document.querySelector('.home__container');
 const homeHeight = home.getBoundingClientRect().height;
 
 document.addEventListener('scroll', () => {
-    home.style.opacity = 1.2 - window.scrollY / homeHeight;
+    home.style.opacity = 1.1 - window.scrollY / homeHeight;
 });
 
 // Show "arrow up" button when scrolling down
@@ -72,10 +79,18 @@ workBtnContainer.addEventListener('click', (e) =>{
     if (filter == null){
         return;
     }
+
+    // Remove selection from the previous item and select the new one
+    const active = document.querySelector('.category__btn.selected');
+    active.classList.remove('selected');
+    const target =
+        e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+    target.classList.add('selected');
+
     projectContainer.classList.add('anim-out');
     setTimeout(() => {
         projects.forEach((project) => {
-            if(filter == '*' || filter == project.dataset.type){
+            if(filter === '*' || filter === project.dataset.type){
                 project.classList.remove('invisible');
             } else {
                 project.classList.add('invisible');
@@ -83,9 +98,7 @@ workBtnContainer.addEventListener('click', (e) =>{
         });
         projectContainer.classList.remove('anim-out');
     }, 300);
-    // console.log(filter);
 });
-
 
 function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);
