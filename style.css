@@ -175,6 +175,10 @@ p {
   border-radius: var(--size-border-radius);
 }
 
+.home__contact:hover {
+  background-color: var(--color-orange);
+}
+
 /* Section Common */
 .section {
   padding: 50px;
@@ -316,6 +320,7 @@ p {
 }
 
 .category__btn {
+  position: relative;
   border: 1px solid var(--color-dark-white);
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
@@ -341,9 +346,9 @@ p {
   width: 24px;
   height: 24px;
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease;
 }
@@ -362,17 +367,26 @@ p {
 }
 
 .work__statistics {
+  width: 100%;
+  height: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .work__python {
+  width: 100%;
+  height: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .work__r {
+  width: 100%;
+  height: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -527,8 +541,20 @@ p {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
   .navbar__toggle-btn {
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
 
   #navbar {
@@ -552,24 +578,79 @@ p {
     display: block;
   }
 
+  .home__avatar {
+    width: 80%;
+    height: 80%;
+  }
+
+  .section {
+    padding: 16px;
+    padding-top: 48px;
+  }
+
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
 
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
 
   .skillset {
     flex-direction: column;
   }
 
+  .category__btn {
+    width: 100%;
+    margin: 4px 0;
+  }
+
   .project {
     flex-grow: 1;
   }
 
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .testimonial__avatar {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .testimonial__avatar:nth-child(odd),
+  .testimonial__avatar:nth-child(even) {
+    margin: 0px;
+    margin-bottom: 10px;
+  }
+
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  #contact {
+    padding-top: 8px;
+  }
+
+  .contact__links {
+    height: 40px;
+    margin: 12px 0;
+  }
+
+  .contact__rights {
+    font-size: var(--font-small);
+    margin-bottom: 24px;
+  }
+
+  .arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
   }
 }
