@@ -26,6 +26,8 @@
   --weight-bold: 700;
   --weight-semi-bold: 600;
   --weight-regular: 400;
+  --weight-light: 300;
+
   /* Size */
   --size-border-radius: 4px;
 
@@ -39,7 +41,7 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   margin: 0;
   cursor: default;
 }
@@ -129,6 +131,7 @@ p {
 
 .navbar__menu__item:hover {
   border: 1px solid white;
+  cursor: pointer;
   border-radius: var(--size-border-radius);
   background-color: var(--color-dark-pink);
 }
